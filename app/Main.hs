@@ -1,8 +1,8 @@
 
 module Main where
 
-import Control.Monad.State
-import Control.Monad.Trans.Except
+import Control.Monad.State        (State, evalState)
+import Control.Monad.Trans.Except (runExceptT)
 
 import Err    (CError(..))
 import Mstate (MS(unMS), getState, putState, throwError)
