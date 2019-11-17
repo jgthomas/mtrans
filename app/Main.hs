@@ -19,16 +19,25 @@ newtype MS s a = MS { unMS :: ExceptT CError (State s) a }
      )
 
 
+getState = MS (lift get)
+
+
+putState s = MS $ lift $ put s
+
+
+throwError e = MS $ throwE e
+
+
 dumb :: String -> MS String String
 dumb [] = do
-     curr <- MS (lift get)
+     curr <- getState
      return curr
 dumb (x:xs) = do
-     curr <- MS (lift get)
+     curr <- getState
      case x of
-          'x' -> MS $ throwE XError
+          'x' -> throwError XError
           _   -> do
-                  MS $ lift $ put (x:curr)
+                  putState (x:curr)
                   dumb xs
 
 
