@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: b877ef6e7b37db76fd1675ba8ad4526e73bdf00b04c99b2dbf1f8e7023d15d75
+-- hash: 98bf0121ce9f03ea46da7a991af11321f84b5f7b5348d2a388ca8a43fea28bb1
 
 name:           mtrans
 version:        0.1.0.0
@@ -26,7 +26,9 @@ source-repository head
 
 library
   exposed-modules:
+      Err
       Lib
+      Mstate
   other-modules:
       Paths_mtrans
   hs-source-dirs:

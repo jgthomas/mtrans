@@ -1,34 +1,11 @@
-{-# LANGUAGE GeneralizedNewtypeDeriving #-}
 
 module Main where
 
 import Control.Monad.State
 import Control.Monad.Trans.Except
 
-
-data CError = XError
-            | YError
-            deriving Show
-
-
-newtype MS s a = MS { unMS :: ExceptT CError (State s) a }
-  deriving
-    (  Functor
-     , Applicative
-     , Monad
-     )
-
-
-getState :: MS a a
-getState = MS (lift get)
-
-
-putState :: s -> MS s ()
-putState s = MS $ lift $ put s
-
-
-throwError :: CError -> MS s a
-throwError e = MS $ throwE e
+import Err    (CError(..))
+import Mstate (MS(unMS), getState, putState, throwError)
 
 
 dumb :: String -> MS String String
