@@ -19,12 +19,15 @@ newtype MS s a = MS { unMS :: ExceptT CError (State s) a }
      )
 
 
+getState :: MS a a
 getState = MS (lift get)
 
 
+putState :: s -> MS s ()
 putState s = MS $ lift $ put s
 
 
+throwError :: CError -> MS s a
 throwError e = MS $ throwE e
 
 
