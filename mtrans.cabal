@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 3ee0668fb7c0823ef4e55e996c30b9e5ab1b099be5a005254026d6e78cd88ead
+-- hash: b877ef6e7b37db76fd1675ba8ad4526e73bdf00b04c99b2dbf1f8e7023d15d75
 
 name:           mtrans
 version:        0.1.0.0
@@ -19,7 +19,6 @@ license-file:   LICENSE
 build-type:     Simple
 extra-source-files:
     README.md
-    ChangeLog.md
 
 source-repository head
   type: git
