@@ -25,8 +25,11 @@ dumb [] = do
      return curr
 dumb (x:xs) = do
      curr <- MS (lift get)
-     MS $ lift $ put (x:curr)
-     dumb xs
+     case x of
+          'x' -> MS $ throwE XError
+          _   -> do
+                  MS $ lift $ put (x:curr)
+                  dumb xs
 
 
 dumber :: String -> State String (Either CError String)
@@ -39,5 +42,6 @@ dumbest s = evalState (runExceptT . unMS $ dumb s) []
 
 main :: IO ()
 main = do
-    let x = dumbest "dog"
+    word <- getLine
+    let x = dumbest word
     print x
