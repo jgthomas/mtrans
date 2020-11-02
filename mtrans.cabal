@@ -1,10 +1,10 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.31.2.
+-- This file has been generated from package.yaml by hpack version 0.33.0.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 9e09c4917fae784795e7024d347e6e619d6676daf4a56ff2ad76697e2ef9062f
+-- hash: be0db7352d32fce3d2cbe5da32826d2712e1dde4c1ac91d216461c254fbb90bd
 
 name:           mtrans
 version:        0.1.0.0
@@ -15,7 +15,6 @@ author:         James Thomas
 maintainer:     jgtcode@protonmail.com
 copyright:      2019 James Thomas
 license:        BSD3
-license-file:   LICENSE
 build-type:     Simple
 extra-source-files:
     README.md
